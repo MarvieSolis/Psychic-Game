@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Psychic-Game
+  </title>
+</head>
+
+<body>
+
+  <div id="game">
+
+
+
+  </div>
+
+  <p class="message">Guess what letter I am thinking of</p>
+  <p class="userGuess"></p>
+  <p class="computerGuess"></p>
+  <p class="wins"></p>
+  <p class="loses"></p>
+  <p class="gleft"></p>
+  <p class="yguess"></p>
+
+
+  <script type="text/javascript">
+    var wins = 0;
+    var losses = 0;
+    var guessesleft = 10;
+    var yourguesses = [];
+    var possible = "abcdefghijklmnopqrstuvwxyz";
+
+    function makeid() {
+        var possible = "abcdefghijklmnopqrstuvwxyz";
+        letter = possible.charAt(Math.floor(Math.random() * 26));
+        return letter;
+        }
+
+
+    makeid();
+    
+    document.onkeyup = function(event) {
+      var userGuess = event.key;
+      var computerGuess;
+      yourguesses.push(userGuess);
+
+
+        if (userGuess === letter) {
+            wins++;
+            guessesleft = 9;
+            yourguesses.length = 0;
+            makeid();
+        }
+
+        if (userGuess !== letter) {
+            guessesleft--;
+        }
+
+        if (guessesleft === 0) {
+            losses++;
+            guessesleft = 9;
+            yourguesses.length = 0;
+            makeid();
+        }
+
+
+
+          document.querySelector(".wins").innerHTML = "Wins: " + wins;
+          document.querySelector(".loses").innerHTML = "Losses: " + losses;
+          document.querySelector(".gleft").innerHTML = "Guesses left: " + guessesleft;
+          document.querySelector(".yguess").innerHTML = "Your guesses: " + yourguesses + " ";
+
+
+
+
+
+      
+    
+    }
+
+  </script>
+
+</body>
+
+</html>
