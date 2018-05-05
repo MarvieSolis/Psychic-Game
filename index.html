@@ -9,19 +9,22 @@
 
 <body>
 
+
   <div id="game">
 
 
 
   </div>
 
+
+  <h1>The Psychic Game</h1>
   <p class="message">Guess what letter I am thinking of</p>
   <p class="userGuess"></p>
   <p class="computerGuess"></p>
-  <p class="wins"></p>
-  <p class="loses"></p>
-  <p class="gleft"></p>
-  <p class="yguess"></p>
+  <p class="wins">Wins: 0</p>
+  <p class="loses">Losses: 0</p>
+  <p class="gleft">Guesses Left: 9</p>
+  <p class="yguess">Your guesses so far:</p>
 
 
   <script type="text/javascript">
@@ -68,8 +71,8 @@
 
           document.querySelector(".wins").innerHTML = "Wins: " + wins;
           document.querySelector(".loses").innerHTML = "Losses: " + losses;
-          document.querySelector(".gleft").innerHTML = "Guesses left: " + guessesleft;
-          document.querySelector(".yguess").innerHTML = "Your guesses: " + yourguesses + " ";
+          document.querySelector(".gleft").innerHTML = "Guesses Left: " + guessesleft;
+          document.querySelector(".yguess").innerHTML = "Your guesses so far: " + yourguesses + " ";
 
 
 
