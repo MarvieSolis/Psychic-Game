@@ -3,86 +3,47 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Psychic-Game
-  </title>
+  <title>Psychic-Game </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="./assets/images/smoke.gif">
+    </div>
+    <div class="col-md-4">
 
-  <div id="game">
+
+      <div id="game">
 
 
 
+      </div>
+
+
+      <h1>The Psychic Game</h1>
+      <p class="message">Guess what letter I am thinking of</p>
+      <p class="userGuess"></p>
+      <p class="computerGuess"></p>
+      <p class="wins">Wins: 0</p>
+      <p class="loses">Losses: 0</p>
+      <p class="gleft">Guesses Left: 9</p>
+      <p class="yguess">Your guesses so far:</p>
+
+
+      <script src="./assets/javascript/game.js">
+      </script>
+    </div>
+    <div class="col-md-4">
+        <img src="./assets/images/smoke.gif">
+    </div>
   </div>
+</div>
 
-
-  <h1>The Psychic Game</h1>
-  <p class="message">Guess what letter I am thinking of</p>
-  <p class="userGuess"></p>
-  <p class="computerGuess"></p>
-  <p class="wins">Wins: 0</p>
-  <p class="loses">Losses: 0</p>
-  <p class="gleft">Guesses Left: 9</p>
-  <p class="yguess">Your guesses so far:</p>
-
-
-  <script type="text/javascript">
-    var wins = 0;
-    var losses = 0;
-    var guessesleft = 10;
-    var yourguesses = [];
-    var possible = "abcdefghijklmnopqrstuvwxyz";
-
-    function makeid() {
-        var possible = "abcdefghijklmnopqrstuvwxyz";
-        letter = possible.charAt(Math.floor(Math.random() * 26));
-        return letter;
-        }
-
-
-    makeid();
-    
-    document.onkeyup = function(event) {
-      var userGuess = event.key;
-      var computerGuess;
-      yourguesses.push(userGuess);
-
-
-        if (userGuess === letter) {
-            wins++;
-            guessesleft = 9;
-            yourguesses.length = 0;
-            makeid();
-        }
-
-        if (userGuess !== letter) {
-            guessesleft--;
-        }
-
-        if (guessesleft === 0) {
-            losses++;
-            guessesleft = 9;
-            yourguesses.length = 0;
-            makeid();
-        }
-
-
-
-          document.querySelector(".wins").innerHTML = "Wins: " + wins;
-          document.querySelector(".loses").innerHTML = "Losses: " + losses;
-          document.querySelector(".gleft").innerHTML = "Guesses Left: " + guessesleft;
-          document.querySelector(".yguess").innerHTML = "Your guesses so far: " + yourguesses + " ";
-
-
-
-
-
-      
-    
-    }
-
-  </script>
 
 </body>
 

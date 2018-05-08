@@ -1,0 +1,23 @@
+.container {
+    margin: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 800;
+    color: plum;
+    background-color: #222;
+    border: 10px;
+    border-color: #555;
+    border-radius: 10%; 
+    border-style: solid;
+}
+
+body {
+    background: linear-gradient(black, grey);
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+}
